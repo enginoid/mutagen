@@ -81,7 +81,7 @@ class ID3(DictProxy, mutagen.Metadata):
                 raise ValueError('Requested bytes (%s) less than zero' % size)
             if size > self.__filesize:
                 size = self.__filesize - 10
-        except Attribu  teError: pass
+        except AttributeError: pass
         data = self.__fileobj.read(size)
         if len(data) != size: raise EOFError
         self.__readbytes += size
